@@ -1,0 +1,11 @@
+{
+    "title": "Text to Speech Converter",
+    "text_label": "Text to convert:",
+    "voice_label": "Voice:",
+    "button_text": "Convert and Download MP3",
+    "loading_voices": "Loading voices...",
+    "error_loading_voices": "Error loading voices",
+    "generating_audio": "Generating audio, please wait...",
+    "downloaded_audio": "Audio downloaded!",
+    "error_generating_audio": "There was an error generating the audio."
+}

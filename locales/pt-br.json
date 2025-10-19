@@ -1,0 +1,11 @@
+{
+    "title": "Conversor de Texto para Voz",
+    "text_label": "Texto para converter:",
+    "voice_label": "Voz:",
+    "button_text": "Converter e Baixar MP3",
+    "loading_voices": "Carregando vozes...",
+    "error_loading_voices": "Erro ao carregar vozes",
+    "generating_audio": "Gerando áudio, por favor aguarde...",
+    "downloaded_audio": "Áudio baixado!",
+    "error_generating_audio": "Ocorreu um erro ao gerar o áudio."
+}

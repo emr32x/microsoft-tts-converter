@@ -31,7 +31,7 @@ def load_translations(lang: str):
 @app.get("/")
 async def read_root(request: Request):
     accept_language = request.headers.get("accept-language", "en")
-    lang = accept_language.split(",")[0].split("-")[0]
+    lang = accept_language.split(",").split("-")
     if lang not in ["es", "en", "pt"]:
         lang = "en"
     translations = load_translations(lang)
@@ -40,17 +40,14 @@ async def read_root(request: Request):
         {"request": request, "translations": translations, "lang": lang}
     )
 
-# --- ESTE ES EL ENDPOINT MODIFICADO ---
 @app.get("/voices/")
 async def get_voices():
-    # Ahora lee la lista de voces desde el archivo local. ¡Esto es súper rápido!
     try:
         with open("voices.json", "r", encoding="utf-8") as f:
             voices = json.load(f)
         return voices
     except Exception as e:
         raise HTTPException(status_code=500, detail="No se pudo cargar el archivo de voces.")
-# --- FIN DE LA MODIFICACIÓN ---
 
 @app.post("/tts/")
 async def text_to_speech(
@@ -73,6 +70,4 @@ async def text_to_speech(
         path=output_path,
         media_type="audio/mpeg",
         filename="speech.mp3"
-    )```
-
----
+    )

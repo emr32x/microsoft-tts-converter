@@ -9,6 +9,26 @@
         textarea { height: 100px; }
         button { padding: 0.5em 1em; font-size: 1em; cursor: pointer; }
         #mensaje { color: blue; font-weight: bold; }
+        
+        /* --- ESTILOS PARA EL NUEVO BOTÓN --- */
+        .telegram-btn {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            margin-top: 2em;
+            padding: 0.75em 1em;
+            background-color: #0088cc; /* Color azul de Telegram */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .telegram-btn:hover {
+            background-color: #0077b3; /* Un poco más oscuro al pasar el ratón */
+        }
+        /* --- FIN DE ESTILOS NUEVOS --- */
+
     </style>
 </head>
 <body>
@@ -26,6 +46,13 @@
     <button id="convertirBtn">{{ translations.button_text }}</button>
 
     <p id="mensaje"></p>
+
+    <!-- --- NUEVO BOTÓN DE TELEGRAM AÑADIDO AQUÍ --- -->
+    <a href="https://t.me/gema23_32" target="_blank" rel="noopener noreferrer" class="telegram-btn">
+        {{ translations.telegram_button }}
+    </a>
+    <!-- ----------------------------------------- -->
+
 
     <script>
         const vozSelect = document.getElementById('voz');
@@ -92,4 +119,4 @@
     </script>
 
 </body>
-</html>
+</html>    

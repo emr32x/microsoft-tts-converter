@@ -1,0 +1,12 @@
+{
+    "title": "Convertir Texto a Voz",
+    "text_label": "Texto a convertir:",
+    "voice_label": "Voz:",
+    "button_text": "Convertir y Descargar MP3",
+    "loading_voices": "Cargando voces...",
+    "error_loading_voices": "Error al cargar voces",
+    "generating_audio": "Generando audio, por favor espera...",
+    "downloaded_audio": "¡Audio descargado!",
+    "error_generating_audio": "Hubo un error al generar el audio.",
+    "telegram_button": "Únete al Canal de Telegram"
+}

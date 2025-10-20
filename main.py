@@ -31,7 +31,9 @@ def load_translations(lang: str):
 @app.get("/")
 async def read_root(request: Request):
     accept_language = request.headers.get("accept-language", "en")
-    lang = accept_language.split(",").split("-")
+    # --- ESTA ES LA LÍNEA CORREGIDA ---
+    lang = accept_language.split(",")[0].split("-")[0]
+    # ------------------------------------
     if lang not in ["es", "en", "pt"]:
         lang = "en"
     translations = load_translations(lang)
@@ -47,27 +49,4 @@ async def get_voices():
             voices = json.load(f)
         return voices
     except Exception as e:
-        raise HTTPException(status_code=500, detail="No se pudo cargar el archivo de voces.")
-
-@app.post("/tts/")
-async def text_to_speech(
-    background_tasks: BackgroundTasks,
-    text: str = Body(..., embed=True),
-    voice: str = Body(..., example="en-US-AriaNeural", embed=True)
-):
-    temp_dir = tempfile.gettempdir()
-    output_path = os.path.join(temp_dir, f"{uuid.uuid4()}.mp3")
-
-    try:
-        communicate = edge_tts.Communicate(text, voice)
-        await communicate.save(output_path)
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error en la síntesis de voz: {str(e)}")
-
-    background_tasks.add_task(os.remove, output_path)
-
-    return FileResponse(
-        path=output_path,
-        media_type="audio/mpeg",
-        filename="speech.mp3"
-    )
+        raise HTTPException(status_code=5

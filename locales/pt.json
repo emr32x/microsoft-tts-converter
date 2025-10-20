@@ -7,5 +7,6 @@
     "error_loading_voices": "Erro ao carregar vozes",
     "generating_audio": "Gerando áudio, por favor aguarde...",
     "downloaded_audio": "Áudio baixado!",
-    "error_generating_audio": "Ocorreu um erro ao gerar o áudio."
+    "error_generating_audio": "Ocorreu um erro ao gerar o áudio.",
+    "telegram_button": "Junte-se ao Canal do Telegram"
 }

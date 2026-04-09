@@ -45,7 +45,7 @@ def get_html(translations, lang):
 <body>
     <h1>{translations["title"]}</h1>
     <label for="texto">{translations["text_label"]}</label>
-    <textarea id="texto">Hola mundo.</textarea>
+    <textarea id="texto" placeholder="Escribe el texto aquí..."></textarea>
     <label for="voz">{translations["voice_label"]}</label>
     <select id="voz"><option value="">{translations["loading_voices"]}</option></select>
     <button id="convertirBtn">{translations["button_text"]}</button>

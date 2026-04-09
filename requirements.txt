@@ -1,4 +1,4 @@
 fastapi
 uvicorn
 edge-tts
-Jinja2
+jinja2

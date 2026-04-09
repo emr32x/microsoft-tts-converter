@@ -72,7 +72,8 @@
                 voices.forEach(voice => {
                     const option = document.createElement('option');
                     option.value = voice.ShortName;
-                    option.textContent = `${voice.DisplayName} (${voice.Gender}, ${voice.Locale})`;
+                    const displayName = voice.FriendlyName || voice.DisplayName || voice.ShortName;
+                    option.textContent = `${displayName} (${voice.Gender}, ${voice.Locale})`;
                     if (voice.ShortName === 'es-MX-JorgeNeural') {
                         option.selected = true;
                     }

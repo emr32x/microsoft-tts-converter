@@ -55,9 +55,14 @@ async def get_voices():
 @app.post("/tts/")
 async def text_to_speech(
     background_tasks: BackgroundTasks,
-    text: str = Body(..., embed=True),
-    voice: str = Body(..., example="en-US-AriaNeural", embed=True)
+    request: Request
 ):
+    body = await request.json()
+    text = body.get("text", "")
+    voice = body.get("voice", "")
+    
+    if not text or not voice:
+        raise HTTPException(status_code=400, detail="Faltan parámetros text o voice")
     temp_dir = tempfile.gettempdir()
     output_path = os.path.join(temp_dir, f"{uuid.uuid4()}.mp3")
 
